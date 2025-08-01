@@ -11,12 +11,7 @@ def gambar_piramida(tinggi):
     """Menggambar pola piramida bintang."""
     print(f"\n-------------------- Piramida Tinggi {tinggi} --------------------")
     for i in range(1, tinggi + 1):
-        # Cetak spasi sebelum bintang (untuk memusatkan piramida)
-        # Jumlah spasi = tinggi - nomor baris
         print(" " * (tinggi - i), end="")
-        
-        # Cetak bintang
-        # Jumlah bintang = (2 * nomor baris) - 1
         print("*" * (2 * i - 1))
     print("-" * 60)
 
@@ -48,6 +43,5 @@ def main_generator_piramida():
         except Exception as e:
             print(f"Terjadi kesalahan: {e}")
 
-# Jalankan program
 if __name__ == "__main__":
     main_generator_piramida()
