@@ -19,7 +19,6 @@ def tambah_item(daftar_belanja):
         print("Nama item tidak boleh kosong!")
         return
 
-    # Menambahkan item sebagai dictionary dengan status 'belum dibeli'
     daftar_belanja.append({"nama": item, "dibeli": False})
     print(f"'{item}' berhasil ditambahkan ke daftar.")
 
@@ -38,8 +37,8 @@ def lihat_daftar(daftar_belanja):
 def tandai_dibeli(daftar_belanja):
     """Menandai item tertentu sebagai sudah dibeli."""
     print("\n----- Tandai Item Sudah Dibeli ----")
-    lihat_daftar(daftar_belanja) # Tampilkan daftar untuk memudahkan pemilihan
-    if not daftar_belanja: # Cek lagi jika daftar kosong setelah tampilkan_daftar
+    lihat_daftar(daftar_belanja)
+    if not daftar_belanja:
         return
 
     try:
@@ -55,8 +54,8 @@ def tandai_dibeli(daftar_belanja):
 def hapus_item(daftar_belanja):
     """Menghapus item tertentu dari daftar belanja."""
     print("\n----------- Hapus Item ------------")
-    lihat_daftar(daftar_belanja) # Tampilkan daftar untuk memudahkan pemilihan
-    if not daftar_belanja: # Cek lagi jika daftar kosong setelah tampilkan_daftar
+    lihat_daftar(daftar_belanja)
+    if not daftar_belanja:
         return
 
     try:
@@ -84,7 +83,7 @@ def bersihkan_daftar(daftar_belanja):
 
 def main_daftar_belanja():
     """Fungsi utama untuk menjalankan aplikasi daftar belanja."""
-    daftar_belanja = [] # List untuk menyimpan item belanja
+    daftar_belanja = []
 
     while True:
         tampilkan_menu()
@@ -106,6 +105,5 @@ def main_daftar_belanja():
         else:
             print("Pilihan tidak valid. Silakan coba lagi.")
 
-# Panggil fungsi utama saat script dijalankan
 if __name__ == "__main__":
     main_daftar_belanja()
