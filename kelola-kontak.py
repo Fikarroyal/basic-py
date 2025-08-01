@@ -21,7 +21,6 @@ def tambah_kontak(daftar_kontak):
     telepon = input("Telepon: ").strip()
     email = input("Email (opsional): ").strip()
 
-    # Cek apakah nama sudah ada
     for kontak in daftar_kontak:
         if kontak['nama'].lower() == nama.lower():
             print(f"Kontak dengan nama '{nama}' sudah ada.")
@@ -30,7 +29,7 @@ def tambah_kontak(daftar_kontak):
     kontak_baru = {
         'nama': nama,
         'telepon': telepon,
-        'email': email if email else 'Tidak Ada' # Jika email kosong, isi 'Tidak Ada'
+        'email': email if email else 'Tidak Ada'
     }
     daftar_kontak.append(kontak_baru)
     print(f"Kontak '{nama}' berhasil ditambahkan!")
@@ -60,7 +59,7 @@ def cari_kontak(daftar_kontak):
             print(f"Telepon: {kontak['telepon']}")
             print(f"Email: {kontak['email']}")
             ditemukan = True
-            break # Berhenti setelah menemukan kontak pertama yang cocok
+            break
     if not ditemukan:
         print(f"Kontak dengan nama '{kata_kunci}' tidak ditemukan.")
 
@@ -84,7 +83,7 @@ def hapus_kontak(daftar_kontak):
 
 def main_manajemen_kontak():
     """Fungsi utama untuk menjalankan program."""
-    kontak = [] # List untuk menyimpan semua kontak
+    kontak = []
 
     while True:
         tampilkan_menu()
@@ -104,6 +103,5 @@ def main_manajemen_kontak():
         else:
             print("Pilihan tidak valid. Silakan coba lagi.")
 
-# Panggil fungsi utama
 if __name__ == "__main__":
     main_manajemen_kontak()
