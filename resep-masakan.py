@@ -17,7 +17,6 @@ def tambah_resep(daftar_resep):
         print("Nama resep tidak boleh kosong.")
         return
 
-    # Cek apakah resep sudah ada
     if nama_resep in daftar_resep:
         print(f"Resep '{nama_resep}' sudah ada dalam daftar. Silakan perbarui atau gunakan nama lain.")
         return
@@ -28,7 +27,7 @@ def tambah_resep(daftar_resep):
         bahan = input("- ").strip()
         if bahan.lower() == 'selesai':
             break
-        if bahan: # Hanya tambahkan jika tidak kosong
+        if bahan:
             bahan_bahan.append(bahan.capitalize())
     
     if not bahan_bahan:
@@ -41,7 +40,7 @@ def tambah_resep(daftar_resep):
         instruksi_baris = input("- ").strip()
         if instruksi_baris.lower() == 'selesai':
             break
-        if instruksi_baris: # Hanya tambahkan jika tidak kosong
+        if instruksi_baris:
             instruksi.append(instruksi_baris)
 
     if not instruksi:
@@ -69,7 +68,7 @@ def lihat_semua_resep(daftar_resep):
         print("  Instruksi:")
         for i, langkah in enumerate(detail['instruksi'], 1):
             print(f"    {i}. {langkah}")
-        print("-" * 40) # Garis pemisah antar resep
+        print("-" * 40)
 
 def cari_resep(daftar_resep):
     """Mencari dan menampilkan resep berdasarkan nama."""
@@ -91,7 +90,7 @@ def cari_resep(daftar_resep):
 
 def main_manajemen_resep():
     """Fungsi utama untuk menjalankan aplikasi manajemen resep."""
-    resep_masakan = {} # Dictionary untuk menyimpan resep
+    resep_masakan = {}
 
     while True:
         tampilkan_menu()
@@ -109,6 +108,5 @@ def main_manajemen_resep():
         else:
             print("Pilihan tidak valid. Silakan coba lagi.")
 
-# Jalankan fungsi utama
 if __name__ == "__main__":
     main_manajemen_resep()
