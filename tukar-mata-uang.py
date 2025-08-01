@@ -23,9 +23,9 @@ def tampilkan_menu():
     print("  Pertukaran mata uang rupiah dgn mata uang asing  ")
     print("=" * 51)
     print("Mata Uang Asing Tersedia:")
-    # Buat string daftar mata uang asing dengan rapi
+
     mata_uang_asing_list = [k for k in NILAI_TUKAR.keys() if k != "IDR"]
-    # Pisahkan per 5 mata uang untuk kerapihan
+
     for i in range(0, len(mata_uang_asing_list), 5):
         print(f"  {', '.join(mata_uang_asing_list[i:i+5])}")
     print("-" * 50)
@@ -98,7 +98,6 @@ def tampilkan_semua_nilai_tukar(nilai_tukar_data):
     print("\n--- Semua Nilai Tukar (IDR) ---")
     print("Mata Uang | Kurs per 1 Unit")
     print("----------------------------")
-    # Urutkan berdasarkan kode mata uang untuk tampilan yang rapi
     sorted_mata_uang = sorted([k for k in nilai_tukar_data.keys() if k != "IDR"])
     
     for mata_uang in sorted_mata_uang:
@@ -125,6 +124,5 @@ def main_konverter_mata_uang_lanjutan():
         else:
             print("Pilihan tidak valid. Silakan coba lagi.")
 
-# Jalankan aplikasi
 if __name__ == "__main__":
     main_konverter_mata_uang_lanjutan()
